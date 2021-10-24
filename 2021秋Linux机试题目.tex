@@ -1,0 +1,100 @@
+\PassOptionsToPackage{quiet}{fontspec}
+\documentclass{article}
+
+\usepackage{xcolor}
+\definecolor{backcolor}{RGB}{242,246,255} 
+\pagecolor{backcolor} %设置PDF背景颜色
+
+\usepackage{setspace}
+\setstretch{1.35} %设置行距
+
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK SC}
+\setmainfont{JetBrains Mono}
+\setCJKfamilyfont{kaishu}{KaiTi}
+\newcommand{\kai}{\CJKfamily{kaishu}}
+\setCJKfamilyfont{songti}{FZShuSong-Z01}
+\newcommand{\song}{\CJKfamily{songti}}
+
+\usepackage{wallpaper} %设置logo背景
+\URCornerWallPaper{0.15}{logo.png}
+
+\usepackage{ulem}
+\usepackage{geometry}
+\usepackage{hyperref}
+\hypersetup{hidelinks,
+	colorlinks=true,
+	allcolors=black,
+	pdfstartview=Fit,
+	breaklinks=true}
+
+\geometry{a4paper,left=2cm,right=2cm,top=2cm,bottom=3cm}
+
+\title{\huge\song Linux机试题}
+
+\author{\Large{ LZUOSS}}
+\date{\large 2021年10月}
+\begin{document}
+
+\maketitle    
+
+\section{命令行操作题}
+
+\begin{enumerate}
+    \large \item[(0)] \song 操作步骤须编写文档，包括但不限于Markdown、\LaTeX、Word文档。
+    \subitem \kai  i.  以截图或拍照方式给出操作步骤，需要能看到每一步对应的命令或操作及反馈。
+    \subitem \kai  ii. 拍照内容必须突出主要内容，图形界面内建议只使用截图而非拍照。
+    \subitem \kai  iii.最后文档须以PDF形式提交。
+    \subitem \kai  iv. 需要提供\textit{neofetch}或\textit{screenfetch}输出结果作为完成证明。
+    \large \item[(1)] \song 在虚拟机或实体机上安装Archlinux。注意以下两点：
+    \subitem \kai  i.  小心实体机潜在的硬件兼容性问题，比如Realtek网卡驱动问题。
+    \subitem \kai  ii. 此步骤必须完成，因之后试题均需要在Archlinux上完成。
+    \subitem \kai  iii. /usr和/和swap分别安装在不同的分区
+    \large \item[(2)] \song Master of SSH
+    \small\subitem i. Connect to the remote server we provided.
+    \small\subitem ii. The address of the remote server: 219.246.65.112
+    \small\subitem iii. username:test,passwd:welcometooss.
+    \small\subitem iv. Download the file "/home/test/test.tar.gz" from the remote server.
+    \small\subitem v. Decompress the downloaded file,then run the things derived from the process.
+    \small\subitem vi. Create the public key and the private key, configure the remote server's ssh service.
+    \small\subitem vii. Log into the remote server again by using the SSH private key.
+    \large \item[(3)] \song 编写一个shell脚本，要求打印出CPU、GPU、网卡信息，需要：
+    \subitem \kai  i.  CPU个数、物理核心及逻辑核心数量；GPU个数。
+    \subitem \kai  ii.  网卡数量、类型及各自的ipv4地址。
+    \large \item[(4)] \song 请根据给出文件中提供的信息，找到Signal喜欢的一首歌。\href{https://v-signal.xyz/static/yume.tar.zstd}{\kai \uline {文件下载链接}}
+    \subitem \kai  终端下播放器推荐使用sox。
+    \large \item[(5)] \song The skill of how to use the Crontab.
+    \small\subitem i.  Write a shell script that print "Hello World" on your screen, which should be executed at minute 17 past every 4th hour from 6 through 18 in July.
+    \small\subitem ii. Write a shell script that print nine nine table on your screen, which should be executed at minute 15 past hour 7, 13 and 19 on day-of-month 15 and on every day-of-week from Tuesday through Saturday.
+    \small\subitem iii. Write a shell script that print the current date and time on your screen, which should be executed at minute 5,15 and 25 past every 2nd hour from 4 through 16 on every 5th day-of-month from 1 through 30 and on every day-of-week from Monday through Thursday in every 3rd month from January through December.
+    \small\subitem iv. Please only use \textit{cat} to print "Another minute has passed." on your screen. It should be executed for every minute.
+    \small\subitem v.  The base requirement is as same as the one in question iv. , and you should print the line "After I have got the right answer for this question." and "100\% score is the reward for me." separately, that means we should see two lines instead of only one line on your screen. It should also be executed for every minute.
+    \large \item[(6)] \song 安装Docker，要求：
+    \subitem \kai  i.在Docker内安装两个容器，镜像分别为Debian和Ubuntu
+    \subitem \kai  ii.在Debian或Ubuntu的对应容器内安装MPI（两容器选一即可）
+    \subitem \kai  iii.使用 MPI 接口，编译并运行一个C语言的Hello World程序。
+    \large \item[(7)] \song Use \textit{gdb} to debug a program whose download link is \href{https://hydrogen.dorado.cc/problem.c}{\textit{\uline {here}}.}
+    \large \item[(8)] \song A website should be built on your machine and the WordPress should be installed. 
+    \small\subitem i. The GUI configuration tools such as PHPStudy and aaPanel are forbidden, which means you should only use CLI for installation.
+    \small\subitem ii. After the installation of the WordPress, you are required to publish an article by using a normal account instead of the admin account.
+    \small\subitem iii. Five plug-ins should also be installed and activated, as for the plug-ins, you can choose whatever you want.
+    \large \item[(9)] \song 任意挑一道已完成题目，以文字简要描述步骤，编写成markdown文件，上传至自己Github或Gitee账户的仓库（repo）中，作为README。并第六题中的C语言Hello World程序文件上传至该仓库中。
+\end{enumerate}
+//\song 注：以上题目均可在没有桌面环境的系统中完成
+\\
+\\
+\section{图形界面操作题（附加题）}
+\begin{enumerate}
+\large \item[(A)] \song 安装KDE-Plasma或Gnome、Xfce等个人所喜欢的桌面环境。（如对上述桌面环境不了解，可选择KDE桌面）
+\large \item[(B)] \song 安装\LaTeX，要求：
+    \subitem \kai i.   能够正常输出包含汉字的PDF文件。
+    \subitem \kai ii.  使用等宽字体，如\textit{JetBrains Mono}或\textit{Source Code Pro}等字体作为\LaTeX 的默认拉丁字母字体。
+    \subitem \kai iii. 请使用指定字体文件作为默认汉字字体。\href{https://cloud.v-signal.xyz:29443/s/CQaqwqzb8JtrXQr}{\uline {字体文件下载链接}}
+\item[(C)]Please install the Jupyter-Notebook on your "Server". 
+\small\subitem i. After the installation, the working directory should be set manually, and the strong password is also required (You can look up the Internet for the detail of the "Strong Password").
+\small\subitem ii. Then, the \textit{R} language enviroment is needed and should be compatible for the ipynb file, which means that you can write both \textit{R} and Python code.(Two sample source code files have been compressed into a zip file whose download link is shown below.)
+\href{https://cloud.v-signal.xyz:29443/s/8nbyqLYkojZHjMo}{\uline{\textit{Download link}}}
+\small\subitem iii. Finally, visit your notebook server from any browser on your computer, execute two different code blocks in two different cells, 
+where we can see two figures as the result of the execution of the code, the result should be export as the tex file and complie it with your tex environment into the pdf file(Chinese characters are required in your tex file!).
+\end{enumerate}
+\end{document}
